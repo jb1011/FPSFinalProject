@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         float x = Input.GetAxis("Mouse X");
 
         _camRotation -= y * _lookSpeed * Time.deltaTime;
-        _camRotation = Mathf.Clamp(_camRotation, -90f, 90f);
+        _camRotation = Mathf.Clamp(_camRotation, -25f, 20f);
 
         transform.localRotation = Quaternion.Euler(_camRotation, 0, 0);
         _characterRb.rotation = Quaternion.Euler(_characterRb.rotation.eulerAngles + x * _lookSpeed * Time.deltaTime * Vector3.up);

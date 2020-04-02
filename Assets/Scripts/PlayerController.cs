@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _isGrounded = Physics.CheckSphere(groundCheckTransform.position, 0.3f, groundCheckLayerMask);
-        Vector3 movement = _inputs.z * transform.forward +_inputs.x * transform.right;
+        Vector3 movement = _inputs.z * transform.forward + _inputs.x * transform.right;
         _rb.MovePosition(_rb.position + movement.normalized * _currentSpeed * Time.fixedDeltaTime);
     
     }
