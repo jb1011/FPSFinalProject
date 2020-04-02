@@ -32,19 +32,19 @@ public class Shoot : MonoBehaviour
         if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, range))
         {
             _aimImage.color = new Color(0f, 255f, 0, 120f);
-            _aimImage.CrossFadeAlpha(0.7f, 0.2f, false);
+            _aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
 
             if (hitInfo.rigidbody != null)
             {
                 _aimImage.color = new Color(255f, 0, 0);
-                _aimImage.CrossFadeAlpha(0.7f, 0.2f, false);
+                _aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
             }
             
         }
         else
         {
             _aimImage.color = new Color(255f, 255f, 255f, 120f);
-            _aimImage.CrossFadeAlpha(0.4f, 0.1f, false);
+            _aimImage.CrossFadeAlpha(0.4f, 0.5f, false);
         }
 
         if (Input.GetButtonDown("Fire1"))

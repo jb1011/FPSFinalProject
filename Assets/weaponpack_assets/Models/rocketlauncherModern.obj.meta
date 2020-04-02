@@ -1,61 +1,9 @@
 fileFormatVersion: 2
-guid: f8f4ecff02cdb9d468c3477f57d8bbd8
+guid: e8ae30172b1bba649a4e14100296ac59
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cobalt
-    second: {fileID: -62149816335231173, guid: 3b2952452dc1ab24f90ffcc53f002ff1, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dark_Olive
-    second: {fileID: 363954428322956263, guid: f84f27056450031418b9326b382d47f0, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FrontColor
-    second: {fileID: -640421345888577198, guid: f8f4ecff02cdb9d468c3477f57d8bbd8,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gold
-    second: {fileID: -905690159841262435, guid: 268d66b3d7d049f4e89b7a73007dfc55,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray3
-    second: {fileID: 7136108462328744545, guid: 87c31c295404a174da7b9bfe9217377b,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray4
-    second: {fileID: 1729255793406377828, guid: 296277ec356911c48a36518da695eef8,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray5
-    second: {fileID: 9001761073535921666, guid: 3b2952452dc1ab24f90ffcc53f002ff1,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray6
-    second: {fileID: -4751157459752183577, guid: 7ae04599edcc174408e3785b0bad024c,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray8
-    second: {fileID: 6156539078805630820, guid: 18650672fc9b7d4469f36941b31c7dbf,
-      type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
