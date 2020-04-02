@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame
