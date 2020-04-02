@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     private float _sprint;
 
     private float _currentSpeed;
+
+    [SerializeField]
+    private BoolVariable IsInCar;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,29 +36,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _inputs = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if(!IsInCar.Value){
+            _inputs = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            _currentSpeed = _sprint;
-        }
-        else
-        {
-            _currentSpeed = _originalSpeed;
-        }
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                _currentSpeed = _sprint;
+            }
+            else
+            {
+                _currentSpeed = _originalSpeed;
+            }
 
-        if(Input.GetKey(KeyCode.Space) && _isGrounded)
-        {
-            _rb.AddForce(_jumpForce * transform.up, ForceMode.Impulse);
-            _isGrounded = false;
+            if (Input.GetKey(KeyCode.Space) && _isGrounded)
+            {
+                _rb.AddForce(_jumpForce * transform.up, ForceMode.Impulse);
+                _isGrounded = false;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        _isGrounded = Physics.CheckSphere(groundCheckTransform.position, 0.3f, groundCheckLayerMask);
-        Vector3 movement = _inputs.z * transform.forward + _inputs.x * transform.right;
-        _rb.MovePosition(_rb.position + movement.normalized * _currentSpeed * Time.fixedDeltaTime);
+        if (!IsInCar.Value)
+        {
+            _isGrounded = Physics.CheckSphere(groundCheckTransform.position, 0.3f, groundCheckLayerMask);
+            Vector3 movement = _inputs.z * transform.forward + _inputs.x * transform.right;
+            _rb.MovePosition(_rb.position + movement.normalized * _currentSpeed * Time.fixedDeltaTime);
+        }
     
     }
 }

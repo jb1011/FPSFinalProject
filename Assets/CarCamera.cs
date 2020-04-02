@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CameraController : MonoBehaviour
+public class CarCamera : MonoBehaviour
 {
+
     [SerializeField]
-    private Rigidbody _characterRb;
+    private Rigidbody _carRb;
 
     [SerializeField]
     private float _lookSpeed = 10f;
@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        
+
     }
 
     // Update is called once per frame
@@ -33,6 +33,10 @@ public class CameraController : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(_camRotation, 0, 0);
 
-        _characterRb.rotation = Quaternion.Euler(_characterRb.rotation.eulerAngles + x * _lookSpeed * Time.deltaTime * Vector3.up);
+        if (IsInCar.Value)
+        {
+            _carRb.rotation = Quaternion.Euler(_carRb.rotation.eulerAngles + x * _lookSpeed * Time.deltaTime * Vector3.up);
+        }
+
     }
 }
