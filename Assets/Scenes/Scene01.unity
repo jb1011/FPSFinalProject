@@ -1864,8 +1864,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.2331204, z: 2.0604184}
-  m_Center: {x: 0, y: 0.6165602, z: 0.5302093}
+  m_Size: {x: 1, y: 1.7924552, z: 2.0604184}
+  m_Center: {x: 4.293017e-16, y: 0.3962276, z: 0.5302093}
 --- !u!23 &75416812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1921,7 +1921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75416810}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -43.82, y: 5.55, z: -20.8}
+  m_LocalPosition: {x: -43.82, y: 4, z: -20.8}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 358515929}
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adee41ba79d94746a90c982e6666062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 7
+  _jumpForce: 3
   _originalSpeed: 10
   groundCheckTransform: {fileID: 358515929}
   groundCheckLayerMask:

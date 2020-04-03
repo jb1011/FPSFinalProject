@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TypeWriterEffect : MonoBehaviour
@@ -34,6 +34,7 @@ public class TypeWriterEffect : MonoBehaviour
     void Start()
     {
         StartCoroutine("ShowText");
+        StartCoroutine(LoadScene());
     }
 
     public IEnumerator ShowText()
@@ -59,5 +60,11 @@ public class TypeWriterEffect : MonoBehaviour
             _whereToWrite3.text = currentText;
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    public IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(22f);
+        SceneManager.LoadScene("Scene01");
     }
 }
