@@ -59,11 +59,6 @@ public class PlayerController : MonoBehaviour
                 _jumpSound.Play();
                 _rb.AddForce(_jumpForce * transform.up, ForceMode.Impulse);
                 _isGrounded = false;
-                _rb.mass = 5f;
-            }
-            else
-            {
-                _rb.mass = 1f;
             }
         }
     }
@@ -79,19 +74,12 @@ public class PlayerController : MonoBehaviour
     
     }
 
-    //private void OnTriggerEnter(Collision collision)
-    //{
-    //    if (collision.transform.CompareTag("Item"))
-    //    {
-    //        _itemSound.Play();
-    //    }
-    //}
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Item"))
-    //    {
-    //        _itemSound.Play();
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Item"))
+        {
+            _itemSound.Play();
+        }
+    }
 }
