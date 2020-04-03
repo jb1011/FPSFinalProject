@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour
                 _jumpSound.Play();
                 _rb.AddForce(_jumpForce * transform.up, ForceMode.Impulse);
                 _isGrounded = false;
+                _rb.mass = 5f;
+            }
+            else
+            {
+                _rb.mass = 1f;
             }
         }
     }
