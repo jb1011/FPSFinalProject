@@ -61,7 +61,7 @@ public class DetectionParent : MonoBehaviour
             //_manHumming.volume = 1;
             _angrySound.volume = 0;
 
-            if (sqrLen <= closeDistance * closeDistance)
+            if (sqrLen < closeDistance * closeDistance)
             {
                 
                 StartCoroutine("GotCaught");
@@ -76,8 +76,8 @@ public class DetectionParent : MonoBehaviour
         //_manHumming.volume = 0;
         _navMeshAgent.isStopped = true;
         _angrySound.Play();
-        _anim.SetBool("IsPunching", true);
-        _anim.SetBool("IsIdle", false);
+        //_anim.SetBool("IsPunching", true);
+        _anim.SetBool("IsIdle", true);
         _anim.SetBool("IsWalking", false);
        // _animUI.SetBool("IsOver", true);
         //_AudioUI.Play();
