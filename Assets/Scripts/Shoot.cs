@@ -29,10 +29,6 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private AudioSource _gunShot;
 
-    private void Start()
-    {
-        //_aimImage.color = new Color(255f, 255f, 255f, 127f);
-    }
     private void Update()
     {
         RaycastHit hitInfo;
