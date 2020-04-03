@@ -76,12 +76,12 @@ public class DetectionParent : MonoBehaviour
         //_manHumming.volume = 0;
         _navMeshAgent.isStopped = true;
         _angrySound.Play();
-        //_anim.SetBool("IsYelling", true);
+        _anim.SetBool("IsPunching", true);
         _anim.SetBool("IsIdle", false);
         _anim.SetBool("IsWalking", false);
        // _animUI.SetBool("IsOver", true);
         //_AudioUI.Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
