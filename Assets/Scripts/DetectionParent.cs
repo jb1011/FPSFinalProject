@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DetectionParent : MonoBehaviour
 {
@@ -26,11 +27,8 @@ public class DetectionParent : MonoBehaviour
 
     public BoolVariable _hasHisGun;
 
-    //[SerializeField]
-    //private Animator _animUI;
-
-    //[SerializeField]
-    //private AudioSource _AudioUI;
+    [SerializeField]
+    private TextMeshProUGUI _gotCaught;
 
     private void Start()
     {
@@ -38,6 +36,7 @@ public class DetectionParent : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         //_angrySound.volume = 0;
         //_animUI.SetBool("IsOver", false);
+        _gotCaught.enabled = false;
     }
 
 
@@ -72,15 +71,12 @@ public class DetectionParent : MonoBehaviour
 
     IEnumerator GotCaught()
     {
-        
-        //_manHumming.volume = 0;
         _navMeshAgent.isStopped = true;
         _angrySound.Play();
-        //_anim.SetBool("IsPunching", true);
         _anim.SetBool("IsIdle", true);
         _anim.SetBool("IsWalking", false);
-       // _animUI.SetBool("IsOver", true);
-        //_AudioUI.Play();
+        _gotCaught.enabled = true;
+        
         yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
