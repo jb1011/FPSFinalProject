@@ -21,6 +21,14 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private Image _aimImage;
 
+    [SerializeField]
+    private float _fireRate = 15f;
+
+    private float _nextTimeToFire = 0f;
+
+    [SerializeField]
+    private AudioSource _gunShot;
+
     private void Start()
     {
         //_aimImage.color = new Color(255f, 255f, 255f, 127f);
@@ -47,14 +55,16 @@ public class Shoot : MonoBehaviour
             _aimImage.CrossFadeAlpha(0.4f, 0.5f, false);
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time >= _nextTimeToFire)
         {
+            _nextTimeToFire = Time.time + 1f / _fireRate;
             ShootRocket();
         }
     }
     private void ShootRocket()
     {
         _shootParticle.Play();
+        _gunShot.Play();
         RaycastHit hit;
         if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, range))
         {

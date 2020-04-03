@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarScript : MonoBehaviour
 {
@@ -23,7 +24,11 @@ public class CarScript : MonoBehaviour
     [SerializeField]
     private Transform _playerRoom;
 
+    [SerializeField]
+    private Image _aim;
+
     public BoolVariable _isInCar;
+
     private void Start()
     {
         _carCamera.SetActive(false);
@@ -32,13 +37,20 @@ public class CarScript : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.E))
+        if (other.CompareTag("Player"))
         {
-            
-            _carCamera.SetActive(true);
-            _mainCamera.SetActive(false);
-            //_player.SetActive(false);
-            _isInCar.Value = true;
+
+
+            if (Input.GetKey(KeyCode.E))
+            {
+
+                _carCamera.SetActive(true);
+                _mainCamera.SetActive(false);
+                //_player.SetActive(false);
+                _isInCar.Value = true;
+                
+
+            }
             
         }
 
@@ -53,6 +65,12 @@ public class CarScript : MonoBehaviour
             _rb.MovePosition(_rb.position + movement.normalized * _speed * Time.deltaTime);
             _player.transform.position = _playerRoom.position;
 
+            _aim.enabled = false;
+
+        }
+        else
+        {
+            _aim.enabled = true;
         }
         if (Input.GetKey(KeyCode.Space) && _isInCar)
         {

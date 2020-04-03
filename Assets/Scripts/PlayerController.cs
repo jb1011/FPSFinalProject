@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private BoolVariable IsInCar;
+
+    [SerializeField]
+    private AudioSource _jumpSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space) && _isGrounded)
             {
+                _jumpSound.Play();
                 _rb.AddForce(_jumpForce * transform.up, ForceMode.Impulse);
                 _isGrounded = false;
             }
