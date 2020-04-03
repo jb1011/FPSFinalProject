@@ -64,7 +64,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     public IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(21f);
         SceneManager.LoadScene("Scene01");
     }
 }

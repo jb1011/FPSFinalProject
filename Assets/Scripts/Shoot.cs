@@ -24,6 +24,9 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private float _fireRate = 15f;
 
+    [SerializeField]
+    private Transform _gunPoint;
+
     private float _nextTimeToFire = 0f;
 
     [SerializeField]
@@ -62,7 +65,7 @@ public class Shoot : MonoBehaviour
         _shootParticle.Play();
         _gunShot.Play();
         RaycastHit hit;
-        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, range))
+        if(Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
 

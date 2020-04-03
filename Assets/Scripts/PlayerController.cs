@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private AudioSource _jumpSound;
+
+    [SerializeField]
+    private AudioSource _itemSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,4 +78,20 @@ public class PlayerController : MonoBehaviour
         }
     
     }
+
+    //private void OnTriggerEnter(Collision collision)
+    //{
+    //    if (collision.transform.CompareTag("Item"))
+    //    {
+    //        _itemSound.Play();
+    //    }
+    //}
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Item"))
+    //    {
+    //        _itemSound.Play();
+    //    }
+    //}
 }

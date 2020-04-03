@@ -9,6 +9,7 @@ public class ItemRocket : MonoBehaviour
 
     [SerializeField]
     private BoolVariable _hasHisGun;
+
     private void Start()
     {
         gameObject.SetActive(true);
@@ -17,8 +18,10 @@ public class ItemRocket : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         gameObject.SetActive(false);
         _GuninHand.SetActive(true);
         _hasHisGun.Value = true;
+        
     }
 }
