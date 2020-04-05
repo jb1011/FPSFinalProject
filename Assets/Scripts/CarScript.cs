@@ -29,11 +29,13 @@ public class CarScript : MonoBehaviour
 
     public BoolVariable _isInCar;
 
+    private AudioSource _carAcceleration;
     private void Start()
     {
         _carCamera.SetActive(false);
         _rb = GetComponent<Rigidbody>();
         _isInCar.Value = false;
+        _carAcceleration = GetComponent<AudioSource>();
     }
     private void OnTriggerStay(Collider other)
     {
@@ -67,10 +69,15 @@ public class CarScript : MonoBehaviour
 
             _aim.enabled = false;
 
+            if(Input.GetAxis("Vertical") > 0f)
+            {
+                _carAcceleration.volume = 1f;
+            }
         }
         else
         {
             _aim.enabled = true;
+            _carAcceleration.volume = 0f;
         }
         if (Input.GetKey(KeyCode.Space) && _isInCar)
         {

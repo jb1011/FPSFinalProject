@@ -35,22 +35,17 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _layerEnemy;
 
+    [SerializeField]
+    LayerMask _allLayerMask = ~0;
+
     private void Update()
     {
         RaycastHit hitInfo;
 
         if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, range, _layerEnemy))
         {
-            ////green
-            //_aimImage.color = new Color(0f, 255f, 0, 120f);
-            //_aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
-
-            //if (hitInfo.transform.CompareTag("Enemy"))
-            //{
-                //red
-                _aimImage.color = new Color(255f, 0, 0);
-                _aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
-            //}
+            _aimImage.color = new Color(255f, 0, 0);
+            _aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
             
         }
         else
