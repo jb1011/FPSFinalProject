@@ -29,13 +29,16 @@ public class CarScript : MonoBehaviour
 
     public BoolVariable _isInCar;
 
-    private AudioSource _carAcceleration;
+    private AudioSource _carMusic;
+
+    private Animator _anim;
     private void Start()
     {
         _carCamera.SetActive(false);
         _rb = GetComponent<Rigidbody>();
         _isInCar.Value = false;
-        _carAcceleration = GetComponent<AudioSource>();
+        _carMusic = GetComponent<AudioSource>();
+        _anim = GetComponent<Animator>();
     }
     private void OnTriggerStay(Collider other)
     {
@@ -68,16 +71,22 @@ public class CarScript : MonoBehaviour
             _player.transform.position = _playerRoom.position;
 
             _aim.enabled = false;
+            _carMusic.volume = 1f;
 
-            if(Input.GetAxis("Vertical") > 0f)
+            if (Input.GetButton("Fire1"))
             {
-                _carAcceleration.volume = 1f;
+                _anim.SetBool("IsShooting", true);
             }
+            else
+            {
+                _anim.SetBool("IsShooting", false);
+            }
+
         }
         else
         {
             _aim.enabled = true;
-            _carAcceleration.volume = 0f;
+            _carMusic.volume = 0f;
         }
         if (Input.GetKey(KeyCode.Space) && _isInCar)
         {
