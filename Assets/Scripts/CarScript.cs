@@ -30,6 +30,7 @@ public class CarScript : MonoBehaviour
 
     public BoolVariable _isInCar;
 
+    [SerializeField]
     private AudioSource _carMusic;
 
     private Animator _anim;
@@ -55,9 +56,9 @@ public class CarScript : MonoBehaviour
         _gunCar.SetActive(false);
         _rb = GetComponent<Rigidbody>();
         _isInCar.Value = false;
-        _carMusic = GetComponent<AudioSource>();
         _anim = GetComponent<Animator>();
-        _timeToPurgeText.enabled = false;
+        //_timeToPurgeText.enabled = false;
+        _timeToPurgeText.gameObject.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -94,7 +95,7 @@ public class CarScript : MonoBehaviour
             _player.transform.position = _playerRoom.position;
 
             _aim.enabled = false;
-            _carMusic.volume = 1f;
+            _carMusic.volume = 0.2f;
 
             if (Input.GetButton("Fire1"))
             {
@@ -107,13 +108,15 @@ public class CarScript : MonoBehaviour
 
             if (timer > 0)
             {
-                _timeToPurgeText.enabled = true;
+                _timeToPurgeText.gameObject.SetActive(true);
+                //_timeToPurgeText.enabled = true;
                 timer -= Time.deltaTime;
                 return;
             }
             if(timer <= 0)
             {
-                _timeToPurgeText.enabled = false;
+                //_timeToPurgeText.enabled = false;
+                _timeToPurgeText.gameObject.SetActive(false);
             }
 
         }
