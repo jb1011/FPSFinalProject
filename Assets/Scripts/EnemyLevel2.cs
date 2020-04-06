@@ -13,7 +13,7 @@ public class EnemyLevel2 : MonoBehaviour
 
     public IntVariable m_enemyHP;
 
-    public FloatVariable _score;
+    public IntVariable _score;
 
     private bool _isdead;
 
@@ -43,7 +43,7 @@ public class EnemyLevel2 : MonoBehaviour
     {
         _isdead = true;
         _source.Play();
-        _score.Value += 100f;
+        _score.Value += 50;
         Instantiate(_explosion, transform.position, transform.rotation);
         _anim.SetTrigger("IsDead");
         yield return new WaitForSeconds(2f);
