@@ -49,6 +49,9 @@ public class CarScript : MonoBehaviour
     [SerializeField]
     private AudioSource _sirene;
 
+    [SerializeField]
+    private AudioSource _birdSound;
+
 
     private void Start()
     {
@@ -88,6 +91,7 @@ public class CarScript : MonoBehaviour
     {
         if (_isInCar.Value)
         {
+            _birdSound.volume = 0;
             _input = new Vector3(0, 0, Input.GetAxis("Vertical"));
             Vector3 movement = _input.z * transform.forward;
             _rb.MovePosition(_rb.position + movement.normalized * _speed * Time.deltaTime);
@@ -96,7 +100,7 @@ public class CarScript : MonoBehaviour
             _player.transform.position = _playerRoom.position;
 
             _aim.enabled = false;
-            _carMusic.volume = 0.2f;
+            //_carMusic.volume = 0.2f;
 
             if (Input.GetButton("Fire1"))
             {
@@ -124,7 +128,9 @@ public class CarScript : MonoBehaviour
         else
         {
             _aim.enabled = true;
-            _carMusic.volume = 0f;
+            _birdSound.volume = 0.2f;
+            _carMusic.Stop();
+            //_carMusic.volume = 0f;
         }
         if (Input.GetKey(KeyCode.Space) && _isInCar)
         {

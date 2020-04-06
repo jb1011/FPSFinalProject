@@ -10867,15 +10867,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1ff0d898965f880438947770390aeb5b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 84b4d1cbcbeb336478a6df03710fb17c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.19
+  m_Volume: 0.3
   m_Pitch: -2.7
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 233
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -27325,6 +27325,11 @@ PrefabInstance:
       propertyPath: _carMusic
       value: 
       objectReference: {fileID: 820999334}
+    - target: {fileID: 5403212705343939629, guid: c108f5b36e8b23e43885a72728613e99,
+        type: 3}
+      propertyPath: _birdSound
+      value: 
+      objectReference: {fileID: 820999335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c108f5b36e8b23e43885a72728613e99, type: 3}
 --- !u!1001 &1735764400
