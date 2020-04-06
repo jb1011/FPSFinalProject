@@ -28,6 +28,8 @@ public class ShootCar : MonoBehaviour
 
     private AudioSource _scream;
 
+    public IntVariable m_EnemyHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,7 @@ public class ShootCar : MonoBehaviour
             {
                 Debug.Log("hey");
                 hit.rigidbody.AddForce(-hit.normal * _impactForce);
+                m_EnemyHealth.Value -= 10;
 
             }
             Instantiate(m_impactEffect, hit.point, Quaternion.LookRotation(hit.normal));

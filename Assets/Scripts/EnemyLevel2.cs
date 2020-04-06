@@ -10,6 +10,8 @@ public class EnemyLevel2 : MonoBehaviour
     private Animator _anim;
 
     private AudioSource _source;
+
+    public IntVariable m_enemyHP;
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Player"))
@@ -22,12 +24,21 @@ public class EnemyLevel2 : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         _source = GetComponent<AudioSource>();
+        m_enemyHP.Value = 100;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.CompareTag("Player"))
             StartCoroutine(Death());
 
+    }
+
+    private void Update()
+    {
+        if(m_enemyHP.Value <= 0)
+        {
+            StartCoroutine(Death());
+        }
     }
 
     private IEnumerator Death()
