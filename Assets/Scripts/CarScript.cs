@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CarScript : MonoBehaviour
 {
@@ -35,6 +36,19 @@ public class CarScript : MonoBehaviour
 
     [SerializeField]
     private GameObject _gunCar;
+
+    [SerializeField]
+    private TextMeshProUGUI _timeToPurgeText;
+
+    private float timer = 3f;
+
+    [SerializeField]
+    private AudioSource _letsgo;
+
+    [SerializeField]
+    private AudioSource _sirene;
+
+
     private void Start()
     {
         _carCamera.SetActive(false);
@@ -43,6 +57,7 @@ public class CarScript : MonoBehaviour
         _isInCar.Value = false;
         _carMusic = GetComponent<AudioSource>();
         _anim = GetComponent<Animator>();
+        _timeToPurgeText.enabled = false;
     }
     private void OnTriggerStay(Collider other)
     {
@@ -58,7 +73,8 @@ public class CarScript : MonoBehaviour
                 _mainCamera.SetActive(false);
                 //_player.SetActive(false);
                 _isInCar.Value = true;
-                
+                _letsgo.Play();
+                _sirene.Play();
 
             }
             
@@ -87,6 +103,17 @@ public class CarScript : MonoBehaviour
             else
             {
                 _anim.SetBool("IsShooting", false);
+            }
+
+            if (timer > 0)
+            {
+                _timeToPurgeText.enabled = true;
+                timer -= Time.deltaTime;
+                return;
+            }
+            if(timer <= 0)
+            {
+                _timeToPurgeText.enabled = false;
             }
 
         }

@@ -9,6 +9,7 @@ public class EnemyLevel2 : MonoBehaviour
 
     private Animator _anim;
 
+    [SerializeField]
     private AudioSource _source;
 
     public IntVariable m_enemyHP;
@@ -20,14 +21,17 @@ public class EnemyLevel2 : MonoBehaviour
     private void Start()
     {
         _anim = GetComponent<Animator>();
-        _source = GetComponent<AudioSource>();
         m_enemyHP.Value = 100;
         _isdead = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Player"))
-            StartCoroutine(Death());
+        if(collision.transform.CompareTag("Player") && !_isdead)
+            _isdead = true;
+            _source.Play();
+            _score.Value += 50;
+            Instantiate(_explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
 
     }
 
@@ -35,18 +39,23 @@ public class EnemyLevel2 : MonoBehaviour
     {
         if(m_enemyHP.Value <= 0 && !_isdead)
         {
-            StartCoroutine(Death());
+            //StartCoroutine(Death());
+            _isdead = true;
+            _source.Play();
+            _score.Value += 50;
+            Instantiate(_explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 
-    private IEnumerator Death()
-    {
-        _isdead = true;
-        _source.Play();
-        _score.Value += 50;
-        Instantiate(_explosion, transform.position, transform.rotation);
-        _anim.SetTrigger("IsDead");
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-    }
+    //private IEnumerator Death()
+    //{
+    //    _isdead = true;
+    //    _source.Play();
+    //    _score.Value += 50;
+    //    Instantiate(_explosion, transform.position, transform.rotation);
+    //    _anim.SetTrigger("IsDead");
+    //    yield return new WaitForSeconds(2f);
+    //    Destroy(gameObject);
+    //}
 }
