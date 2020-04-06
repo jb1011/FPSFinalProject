@@ -38,6 +38,8 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _allLayerMask = ~0;
 
+    public IntVariable m_enemyHealth;
+
     private void Update()
     {
         RaycastHit hitInfo;
@@ -74,6 +76,7 @@ public class Shoot : MonoBehaviour
             {
                 Debug.Log("hey");
                 hit.rigidbody.AddForce(-hit.normal * _impactForce);
+                m_enemyHealth.Value -= 10;
                 
             }
             Instantiate(m_impactEffect, hit.point, Quaternion.LookRotation(hit.normal));

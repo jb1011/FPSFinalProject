@@ -12,19 +12,17 @@ public class EnemyLevel2 : MonoBehaviour
     private AudioSource _source;
 
     public IntVariable m_enemyHP;
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        Instantiate(_explosion, gameObject.transform);
-    //    }
-    //}
+
+    public FloatVariable _score;
+
+    private bool _isdead;
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
         _source = GetComponent<AudioSource>();
         m_enemyHP.Value = 100;
+        _isdead = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,7 +33,7 @@ public class EnemyLevel2 : MonoBehaviour
 
     private void Update()
     {
-        if(m_enemyHP.Value <= 0)
+        if(m_enemyHP.Value <= 0 && !_isdead)
         {
             StartCoroutine(Death());
         }
@@ -43,7 +41,9 @@ public class EnemyLevel2 : MonoBehaviour
 
     private IEnumerator Death()
     {
+        _isdead = true;
         _source.Play();
+        _score.Value += 100f;
         Instantiate(_explosion, transform.position, transform.rotation);
         _anim.SetTrigger("IsDead");
         yield return new WaitForSeconds(2f);
