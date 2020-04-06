@@ -18,6 +18,7 @@ public class ScoreLevel2 : MonoBehaviour
     {
         _scoreText = GetComponent<TextMeshProUGUI>();
         _score.Value = 0;
+        _scoreText.text = "Score : 0";
     }
 
     private void Update()

@@ -73,6 +73,8 @@ public class CarScript : MonoBehaviour
             _input = new Vector3(0, 0, Input.GetAxis("Vertical"));
             Vector3 movement = _input.z * transform.forward;
             _rb.MovePosition(_rb.position + movement.normalized * _speed * Time.deltaTime);
+
+            //_rb.AddForce(_input.z * transform.forward * _speed, ForceMode.Acceleration);
             _player.transform.position = _playerRoom.position;
 
             _aim.enabled = false;
