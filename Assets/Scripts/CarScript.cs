@@ -76,6 +76,7 @@ public class CarScript : MonoBehaviour
                 _isInCar.Value = true;
                 _letsgo.Play();
                 _sirene.Play();
+                _carMusic.Play();
 
             }
             
