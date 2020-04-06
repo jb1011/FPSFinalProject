@@ -32,9 +32,13 @@ public class CarScript : MonoBehaviour
     private AudioSource _carMusic;
 
     private Animator _anim;
+
+    [SerializeField]
+    private GameObject _gunCar;
     private void Start()
     {
         _carCamera.SetActive(false);
+        _gunCar.SetActive(false);
         _rb = GetComponent<Rigidbody>();
         _isInCar.Value = false;
         _carMusic = GetComponent<AudioSource>();
@@ -50,6 +54,7 @@ public class CarScript : MonoBehaviour
             {
 
                 _carCamera.SetActive(true);
+                _gunCar.SetActive(true);
                 _mainCamera.SetActive(false);
                 //_player.SetActive(false);
                 _isInCar.Value = true;
@@ -92,6 +97,7 @@ public class CarScript : MonoBehaviour
         {
             _isInCar.Value = false;
             _carCamera.SetActive(false);
+            _gunCar.SetActive(false);
             _mainCamera.SetActive(true);
             _player.SetActive(true);
         }

@@ -26,10 +26,12 @@ public class ShootCar : MonoBehaviour
     [SerializeField]
     private float _fireRate = 15f;
 
+    private AudioSource _scream;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _scream = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class ShootCar : MonoBehaviour
     {
         _shootParticle.Play();
         _gunShot.Play();
+        _scream.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(_gunPoint.position, _gunPoint.transform.forward, out hit, range))
