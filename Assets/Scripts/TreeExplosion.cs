@@ -16,8 +16,6 @@ public class TreeExplosion : MonoBehaviour
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             _score.Value += 10;
-            //StartCoroutine(Death());
-
         }
     }
     private IEnumerator Death()

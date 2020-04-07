@@ -60,18 +60,14 @@ public class CarScript : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _isInCar.Value = false;
         _anim = GetComponent<Animator>();
-        //_timeToPurgeText.enabled = false;
         _timeToPurgeText.gameObject.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-
-
             if (Input.GetKey(KeyCode.E))
             {
-
                 _carCamera.SetActive(true);
                 _gunCar.SetActive(true);
                 _mainCamera.SetActive(false);
@@ -82,9 +78,7 @@ public class CarScript : MonoBehaviour
                 _carMusic.Play();
 
             }
-            
         }
-
     }
 
     private void Update()
@@ -95,12 +89,9 @@ public class CarScript : MonoBehaviour
             _input = new Vector3(0, 0, Input.GetAxis("Vertical"));
             Vector3 movement = _input.z * transform.forward;
             _rb.MovePosition(_rb.position + movement.normalized * _speed * Time.deltaTime);
-
-            //_rb.AddForce(_input.z * transform.forward * _speed, ForceMode.Acceleration);
             _player.transform.position = _playerRoom.position;
 
             _aim.enabled = false;
-            //_carMusic.volume = 0.2f;
 
             if (Input.GetButton("Fire1"))
             {
@@ -114,13 +105,11 @@ public class CarScript : MonoBehaviour
             if (timer > 0)
             {
                 _timeToPurgeText.gameObject.SetActive(true);
-                //_timeToPurgeText.enabled = true;
                 timer -= Time.deltaTime;
                 return;
             }
             if(timer <= 0)
             {
-                //_timeToPurgeText.enabled = false;
                 _timeToPurgeText.gameObject.SetActive(false);
             }
 
@@ -130,7 +119,6 @@ public class CarScript : MonoBehaviour
             _aim.enabled = true;
             _birdSound.volume = 0.2f;
             _carMusic.Stop();
-            //_carMusic.volume = 0f;
         }
         if (Input.GetKey(KeyCode.Space) && _isInCar)
         {

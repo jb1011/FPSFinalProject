@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 5944541620405688730}
+  range: 50
   _shootParticle: {fileID: 5944541619806169657}
-  _impactForce: 400
   m_impactEffect: {fileID: 5614067167666142857, guid: 6979950bf4f13ac44a06c73e1c31d538,
     type: 3}
   _aimImage: {fileID: 0}
@@ -24,10 +24,6 @@ MonoBehaviour:
   _layerEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  _allLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_enemyHealth: {fileID: 11400000, guid: cf378607e5cb6c64ca6d2b86e33b83af, type: 2}
 --- !u!1 &5944541619685011459
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +158,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &5944541619806169636
 GameObject:
   m_ObjectHideFlags: 0

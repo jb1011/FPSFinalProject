@@ -13,7 +13,6 @@ public class ScoreLevel2 : MonoBehaviour
     public float CountInterval = 0.1f, timer=0;
     int i = 0;
 
-
     private void Start()
     {
         _scoreText = GetComponent<TextMeshProUGUI>();
@@ -30,7 +29,5 @@ public class ScoreLevel2 : MonoBehaviour
             _scoreText.text = "Score : " + i.ToString();
             timer = 0;
         }
-        //_scoreText.text = "Score : " + _score.Value;
     }
-
 }

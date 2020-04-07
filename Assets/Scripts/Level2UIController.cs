@@ -13,6 +13,8 @@ public class Level2UIController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _radio;
+
+    private float timer = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,15 @@ public class Level2UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            _getInCar.enabled = false;
+        }
+
         if (_isIncar.Value)
         {
             _getInCar.enabled = false;

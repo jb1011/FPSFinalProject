@@ -35,7 +35,6 @@ public class Shoot : MonoBehaviour
 
     private int damage = 10;
 
-
     private void Update()
     {
         RaycastHit hitInfo;
@@ -72,8 +71,7 @@ public class Shoot : MonoBehaviour
             if(_enemy != null)
             {
                 _enemy.Damage(damage);
-            }
-            
+            }    
         }
 
         if (Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range))

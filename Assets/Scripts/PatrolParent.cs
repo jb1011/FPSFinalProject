@@ -20,21 +20,15 @@ public class PatrolParent : MonoBehaviour
         MoveToNextPatrolPoint();
         CanPatrol.Value = true;
     }
-
-
-
     void Update()
     {
         if (CanPatrol.Value)
         {
-
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
             {
-
                 MoveToNextPatrolPoint();
             }
         }
-
     }
 
     float timer = 3f;

@@ -19,8 +19,6 @@ public class PatrolSimple : MonoBehaviour
 
     }
 
-
-
     void Update()
     {
 
@@ -29,7 +27,6 @@ public class PatrolSimple : MonoBehaviour
 
             MoveToNextPatrolPoint();
         }
-
     }
 
     float timer = 1f;
