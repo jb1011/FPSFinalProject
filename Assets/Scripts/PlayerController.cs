@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _sprint;
 
+    [SerializeField]
     private float _currentSpeed;
 
     [SerializeField]
@@ -33,16 +34,16 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private AudioSource _itemSound;
-    // Start is called before the first frame update
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!IsInCar.Value){
+        if (!IsInCar.Value)
+        {
             _inputs = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
             if (Input.GetKey(KeyCode.LeftShift))
@@ -71,7 +72,6 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = _inputs.z * transform.forward + _inputs.x * transform.right;
             _rb.MovePosition(_rb.position + movement.normalized * _currentSpeed * Time.fixedDeltaTime);
         }
-    
     }
 
 
