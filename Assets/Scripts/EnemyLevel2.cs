@@ -40,6 +40,7 @@ public class EnemyLevel2 : MonoBehaviour
 
         if(_hp <= 0)
         {
+            _score.Value += 50;
             _isdead = true;
             _source.Play();
             Instantiate(_explosion, transform.position, transform.rotation);
