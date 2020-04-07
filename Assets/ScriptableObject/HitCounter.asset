@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621712695387e66438aff30878495c2a, type: 3}
-  m_Name: IntCounter
+  m_Name: HitCounter
   m_EditorClassIdentifier: 
   Value: 0
