@@ -14,9 +14,6 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private ParticleSystem _shootParticle;
 
-    [SerializeField]
-    private float _impactForce = 50f;
-
     public GameObject m_impactEffect;
 
     [SerializeField]
@@ -36,16 +33,9 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _layerEnemy;
 
-    public IntVariable _hitCounter;
-
-    public IntVariable m_enemyHealth;
-
     private int damage = 10;
 
-    private void Start()
-    {
-        _hitCounter.Value = 0;
-    }
+
     private void Update()
     {
         RaycastHit hitInfo;
@@ -78,15 +68,7 @@ public class Shoot : MonoBehaviour
         if(Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range, _layerEnemy))
         {
             EnemyLevel2 _enemy = hit.transform.GetComponent<EnemyLevel2>();
-            //if (hit.rigidbody != null)
-            //{
-            //    Debug.Log("hey");
-            //    hit.rigidbody.AddForce(-hit.normal * _impactForce);
-            //    //m_enemyHealth.Value -= 10;
-            //    _hitCounter.Value++;
-                
-                
-            //}
+
             if(_enemy != null)
             {
                 _enemy.Damage(damage);

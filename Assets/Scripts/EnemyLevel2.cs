@@ -7,23 +7,18 @@ public class EnemyLevel2 : MonoBehaviour
     [SerializeField]
     private GameObject _explosion;
 
-    private Animator _anim;
-
     [SerializeField]
     private AudioSource _source;
-
-    public IntVariable m_enemyHP;
 
     public IntVariable _score;
 
     private bool _isdead;
 
-    public int _hp;
+    [SerializeField]
+    private int _hp;
 
     private void Start()
     {
-        _anim = GetComponent<Animator>();
-        m_enemyHP.Value = 100;
         _isdead = false;
         _hp = 100;
     }
@@ -37,18 +32,6 @@ public class EnemyLevel2 : MonoBehaviour
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-    }
-
-    private void Update()
-    {
-        //if(m_enemyHP.Value <= 0 && !_isdead)
-        //{
-        //    _isdead = true;
-        //    _source.Play();
-        //    _score.Value += 50;
-        //    Instantiate(_explosion, transform.position, transform.rotation);
-        //    Destroy(gameObject);
-        //}
     }
 
     public void Damage(int damage)
