@@ -18,28 +18,19 @@ public class EnemyLevel2 : MonoBehaviour
 
     private bool _isdead;
 
+    public int _hp;
+
     private void Start()
     {
         _anim = GetComponent<Animator>();
         m_enemyHP.Value = 100;
         _isdead = false;
+        _hp = 100;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Player") && !_isdead)
-            _isdead = true;
-            _source.Play();
-            _score.Value += 50;
-            Instantiate(_explosion, transform.position, transform.rotation);
-            Destroy(gameObject);
-
-    }
-
-    private void Update()
-    {
-        if(m_enemyHP.Value <= 0 && !_isdead)
+        if (collision.transform.CompareTag("Player") && !_isdead)
         {
-            //StartCoroutine(Death());
             _isdead = true;
             _source.Play();
             _score.Value += 50;
@@ -48,14 +39,28 @@ public class EnemyLevel2 : MonoBehaviour
         }
     }
 
-    //private IEnumerator Death()
-    //{
-    //    _isdead = true;
-    //    _source.Play();
-    //    _score.Value += 50;
-    //    Instantiate(_explosion, transform.position, transform.rotation);
-    //    _anim.SetTrigger("IsDead");
-    //    yield return new WaitForSeconds(2f);
-    //    Destroy(gameObject);
-    //}
+    private void Update()
+    {
+        //if(m_enemyHP.Value <= 0 && !_isdead)
+        //{
+        //    _isdead = true;
+        //    _source.Play();
+        //    _score.Value += 50;
+        //    Instantiate(_explosion, transform.position, transform.rotation);
+        //    Destroy(gameObject);
+        //}
+    }
+
+    public void Damage(int damage)
+    {
+        _hp -= damage;
+
+        if(_hp <= 0)
+        {
+            _isdead = true;
+            _source.Play();
+            Instantiate(_explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
 }
