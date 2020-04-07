@@ -24,7 +24,7 @@ public class EnemyLevel2 : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Player") && !_isdead)
+        if (collision.transform.CompareTag("Car") && !_isdead)
         {
             _isdead = true;
             _source.Play();

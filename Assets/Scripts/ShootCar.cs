@@ -73,6 +73,7 @@ public class ShootCar : MonoBehaviour
 
         _shootParticle.Play();
         _gunShot.Play();
+        _scream.Play();
         RaycastHit hit;
         if (Physics.Raycast(_gunPoint.position, _gunPoint.transform.forward, out hit, range, _layerEnemy))
         {

@@ -11,7 +11,7 @@ public class TreeExplosion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Player")) 
+        if (collision.transform.CompareTag("Car")) 
         {
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
