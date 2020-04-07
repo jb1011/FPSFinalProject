@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private Camera _camera;
 
+    [SerializeField]
     private float range = 50f;
 
     [SerializeField]
@@ -35,8 +36,6 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _layerEnemy;
 
-    [SerializeField]
-    LayerMask _allLayerMask = ~0;
 
     public IntVariable m_enemyHealth;
 
