@@ -23,10 +23,14 @@ public class EnemyLevel2 : MonoBehaviour
     [SerializeField]
     private Slider _bar;
 
+    [SerializeField]
+    private IntVariable _KillScore;
+
     private void Start()
     {
         _isdead = false;
         _hp = _enemyHealth;
+        _KillScore.Value = 0;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,6 +41,7 @@ public class EnemyLevel2 : MonoBehaviour
             _score.Value += 50;
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
+            _KillScore.Value++;
         }
     }
 
@@ -46,6 +51,7 @@ public class EnemyLevel2 : MonoBehaviour
 
         if(_hp <= 0)
         {
+            _KillScore.Value++;
             _score.Value += 50;
             _isdead = true;
             _source.Play();
