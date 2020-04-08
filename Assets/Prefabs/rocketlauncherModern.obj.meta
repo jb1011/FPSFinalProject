@@ -19,8 +19,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mesh3_Group4_Group1_ModelMat
-    second: {fileID: 7576386722563338562, guid: 242c12700a9eb7643b7891fb815171ff,
-      type: 3}
+    second: {fileID: 204085728455243160, guid: 97bd7c45b03697b438aaa3e4edc1a9a8, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
