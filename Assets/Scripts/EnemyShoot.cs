@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private GameObject _bullet;
 
-    private float _bulletSpeed = 10f;
+    private float _bulletSpeed = 30f;
 
     [SerializeField]
     private Transform _spawn;
@@ -81,5 +81,4 @@ public class EnemyShoot : MonoBehaviour
         Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
         instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
     }
-
 }

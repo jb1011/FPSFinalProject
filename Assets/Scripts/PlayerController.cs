@@ -35,8 +35,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private AudioSource _itemSound;
 
+    [SerializeField]
+    private IntVariable _playerHealth;
+
+    [SerializeField]
+    private int _bulletDamage = 10;
+
     void Start()
     {
+        _playerHealth.Value = 200;
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -81,5 +88,12 @@ public class PlayerController : MonoBehaviour
         {
             _itemSound.Play();
         }
+
+        if (other.CompareTag("Bullet"))
+        {
+            _playerHealth.Value -= _bulletDamage;
+        }
+
     }
+
 }
