@@ -27,7 +27,6 @@ public class EnemyLevel2 : MonoBehaviour
     {
         _isdead = false;
         _hp = _enemyHealth;
-        _bar.value = 1f;
     }
     private void OnCollisionEnter(Collision collision)
     {
