@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyLevel2 : MonoBehaviour
 {
@@ -18,10 +19,15 @@ public class EnemyLevel2 : MonoBehaviour
 
     [SerializeField]
     private int _enemyHealth = 100;
+
+    [SerializeField]
+    private Slider _bar;
+
     private void Start()
     {
         _isdead = false;
         _hp = _enemyHealth;
+        _bar.value = 1f;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -47,5 +53,10 @@ public class EnemyLevel2 : MonoBehaviour
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        _bar.value = (float)_hp / (float)_enemyHealth;
     }
 }

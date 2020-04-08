@@ -52,7 +52,6 @@ public class CarScript : MonoBehaviour
     [SerializeField]
     private AudioSource _birdSound;
 
-
     private void Start()
     {
         _carCamera.SetActive(false);
