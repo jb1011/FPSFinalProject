@@ -20,7 +20,7 @@ public class Scope : MonoBehaviour
     private float _zoomAim;
 
     private float _normalFOV;
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))

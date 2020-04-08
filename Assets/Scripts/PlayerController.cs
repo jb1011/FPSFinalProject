@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _playerHealth.Value = 200;
         _rb = GetComponent<Rigidbody>();
     }
 
