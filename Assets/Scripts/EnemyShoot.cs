@@ -18,10 +18,14 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private GameObject _bullet;
 
-    private float _bulletSpeed = 30f;
+    [SerializeField]
+    private float _bulletSpeed = 50f;
 
     [SerializeField]
     private Transform _spawn;
+
+    [SerializeField]
+    private AudioSource _gunSound;
 
 
     private float _timer = 2f;
@@ -53,7 +57,7 @@ public class EnemyShoot : MonoBehaviour
             {
                 StartCoroutine(Fire());
                 _anim.SetBool("IsShooting", true);
-                
+                _gunSound.Play();
                 _timer = 2f;
             }        
         }
