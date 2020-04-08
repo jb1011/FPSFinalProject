@@ -14,13 +14,14 @@ public class EnemyLevel2 : MonoBehaviour
 
     private bool _isdead;
 
-    [SerializeField]
     private int _hp;
 
+    [SerializeField]
+    private int _enemyHealth = 100;
     private void Start()
     {
         _isdead = false;
-        _hp = 100;
+        _hp = _enemyHealth;
     }
     private void OnCollisionEnter(Collision collision)
     {
