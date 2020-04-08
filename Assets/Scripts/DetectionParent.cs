@@ -19,24 +19,20 @@ public class DetectionParent : MonoBehaviour
     [SerializeField]
     private float closeDistance;
 
-    [SerializeField]
-    private AudioSource _angrySound;
-
-    //[SerializeField]
-    //private AudioSource _manHumming;
-
     public BoolVariable _hasHisGun;
 
     [SerializeField]
     private TextMeshProUGUI _gotCaught;
 
+    private AudioSource _getCaughtSound;
+
     private void Start()
     {
         _anim = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        //_angrySound.volume = 0;
-        //_animUI.SetBool("IsOver", false);
         _gotCaught.enabled = false;
+        _getCaughtSound = GetComponent<AudioSource>();
+        _getCaughtSound.volume = 0;
     }
 
 
@@ -52,17 +48,15 @@ public class DetectionParent : MonoBehaviour
 
             _anim.SetBool("IsIdle", false);
             _anim.SetBool("IsWalking", true);
-            //_anim.SetBool("IsYelling", false);
             _navMeshAgent.isStopped = false;
 
             Vector3 offset = _target.transform.position - transform.position;
             float sqrLen = offset.sqrMagnitude;
-            //_manHumming.volume = 1;
-            _angrySound.volume = 0;
+
 
             if (sqrLen < closeDistance * closeDistance)
             {
-                
+                _getCaughtSound.volume = 1f;
                 StartCoroutine("GotCaught");
 
             }
@@ -72,7 +66,7 @@ public class DetectionParent : MonoBehaviour
     IEnumerator GotCaught()
     {
         _navMeshAgent.isStopped = true;
-        _angrySound.Play();
+
         _anim.SetBool("IsIdle", true);
         _anim.SetBool("IsWalking", false);
         _gotCaught.enabled = true;
