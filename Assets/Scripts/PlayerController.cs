@@ -36,10 +36,16 @@ public class PlayerController : MonoBehaviour
     private AudioSource _itemSound;
 
     [SerializeField]
+    private AudioSource _getsHitSound;
+
+    [SerializeField]
     private IntVariable _playerHealth;
 
     [SerializeField]
     private int _bulletDamage = 10;
+
+    [SerializeField]
+    private Animator _UIController;
 
     void Start()
     {
@@ -91,6 +97,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Bullet"))
         {
+            _UIController.SetTrigger("PlayerHurt");
+            _getsHitSound.Play();
             _playerHealth.Value -= _bulletDamage;
         }
 
