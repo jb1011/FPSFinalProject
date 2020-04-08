@@ -15,7 +15,16 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private bool _playerInSight;
 
-    private float _timer = 1f;
+    [SerializeField]
+    private GameObject _bullet;
+
+    private float _bulletSpeed = 10f;
+
+    [SerializeField]
+    private Transform _spawn;
+
+
+    private float _timer = 2f;
     private void Start()
     {
         _anim = GetComponent<Animator>();
@@ -42,8 +51,10 @@ public class EnemyShoot : MonoBehaviour
             }
             else
             {
+                StartCoroutine(Fire());
                 _anim.SetBool("IsShooting", true);
-                _timer = 1f;
+                
+                _timer = 2f;
             }        
         }
     }
@@ -62,4 +73,13 @@ public class EnemyShoot : MonoBehaviour
             _playerInSight = false;
         }
     }
+
+    IEnumerator Fire()
+    {
+        yield return new WaitForSeconds(0.4f);
+        GameObject instBullet = Instantiate(_bullet, _spawn.position, _spawn.rotation) as GameObject;
+        Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
+        instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
+    }
+
 }
