@@ -42264,6 +42264,11 @@ PrefabInstance:
       propertyPath: _gunShot
       value: 
       objectReference: {fileID: 964455361}
+    - target: {fileID: 5944541619535767951, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: _allLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5944541619685011459, guid: 57a62a887c8c844459bb6e6c29d4b23a,
         type: 3}
       propertyPath: m_Name
@@ -42284,6 +42289,12 @@ PrefabInstance:
       propertyPath: _itemSound
       value: 
       objectReference: {fileID: 964455366}
+    - target: {fileID: 5944541619685011462, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: _playerHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fa54d57360f8444ab16f4110d73c870,
+        type: 2}
     - target: {fileID: 5944541619685011463, guid: 57a62a887c8c844459bb6e6c29d4b23a,
         type: 3}
       propertyPath: m_LocalPosition.x
