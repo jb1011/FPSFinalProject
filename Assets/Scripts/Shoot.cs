@@ -33,13 +33,16 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _layerEnemy;
 
+    [SerializeField]
+    LayerMask _allLayers;
+
     private int damage = 10;
 
     private void Update()
     {
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, range, _layerEnemy))
+        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, range, _layerEnemy, QueryTriggerInteraction.Ignore))
         {
             _aimImage.color = new Color(255f, 0, 0);
             _aimImage.CrossFadeAlpha(0.7f, 0.5f, false);
@@ -64,7 +67,7 @@ public class Shoot : MonoBehaviour
         _shootParticle.Play();
         _gunShot.Play();
         RaycastHit hit;
-        if(Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range, _layerEnemy))
+        if(Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range, _layerEnemy, QueryTriggerInteraction.Ignore))
         {
             EnemyLevel2 _enemy = hit.transform.GetComponent<EnemyLevel2>();
 
@@ -74,7 +77,7 @@ public class Shoot : MonoBehaviour
             }    
         }
 
-        if (Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range))
+        if (Physics.Raycast(_gunPoint.position, _camera.transform.forward, out hit, range, _allLayers, QueryTriggerInteraction.Ignore))
         {
             Instantiate(m_impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
