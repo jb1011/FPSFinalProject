@@ -65,7 +65,7 @@ public class CarScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && !_isInCar.Value)
             {
                 _carCamera.SetActive(true);
                 _gunCar.SetActive(true);
