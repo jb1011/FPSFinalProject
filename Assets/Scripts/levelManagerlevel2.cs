@@ -8,14 +8,13 @@ public class levelManagerlevel2 : MonoBehaviour
     [SerializeField]
     private Transform _player;
 
+    [SerializeField]
+    private IntVariable _playerHealth;
+
     public bool GameIsPaused;
 
     public GameObject PauseMenuUI;
 
-    //private void Start()
-    //{
-    //    PauseMenuUI.SetActive(false);    
-    //}
 
     private void Start()
     {
@@ -25,11 +24,13 @@ public class levelManagerlevel2 : MonoBehaviour
 
     void Update()
     {
+        //if player go through walls
         if(_player.position.y <= -25f)
         {
             SceneManager.LoadScene("Scene02");
         }
 
+        //if player wants to pause the game
         if (Input.GetKey(KeyCode.Escape) && !GameIsPaused)
         {
             Pause();
@@ -38,6 +39,12 @@ public class levelManagerlevel2 : MonoBehaviour
         if (GameIsPaused && Input.GetKey(KeyCode.Space))
         {
             Resume();
+        }
+
+        //if player dies
+        if(_playerHealth.Value <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
