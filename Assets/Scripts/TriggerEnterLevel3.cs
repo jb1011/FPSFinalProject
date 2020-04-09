@@ -14,10 +14,14 @@ public class TriggerEnterLevel3 : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _textGo;
 
+    [SerializeField]
+    private GameObject _collider;
+
     private void Start()
     {
         _textNotPossible.enabled = false;
         _textGo.enabled = false;
+        _collider.SetActive(true);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -29,6 +33,7 @@ public class TriggerEnterLevel3 : MonoBehaviour
         if (other.CompareTag("Player") && _killCount.Value >= 15)
         {
             _textGo.enabled = true;
+            _collider.SetActive(false);
         }
     }
 
