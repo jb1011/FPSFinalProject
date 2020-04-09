@@ -66,21 +66,15 @@ public class EnemyRunShoot : MonoBehaviour
             {
                 _navMeshAgent.destination = gameObject.transform.position;
                 _navMeshAgent.isStopped = true;
-                _anim.SetBool("IsRunning", false);
-                
+                _anim.SetBool("IsRunning", false);   
                 _anim.SetBool("IsShooting", true);
                 _gunSound.Play();
                 _secondTimer -= Time.deltaTime;
-
-
-                //StartCoroutine(Fire());
-
+                
                 if (_secondTimer <= 0)
                 {
-                    GameObject instBullet = Instantiate(_bullet, _spawn.position, _spawn.rotation) as GameObject;
-                    Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
-                    instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
-                    _timer = 1f; 
+                    ShootBullet();
+                    _timer = 1f;
                 }
             }
         }
@@ -101,12 +95,20 @@ public class EnemyRunShoot : MonoBehaviour
         }
     }
 
-    IEnumerator Fire()
+    //IEnumerator Fire()
+    //{
+    //    yield return new WaitForSeconds(0.4f);
+    //    GameObject instBullet = Instantiate(_bullet, _spawn.position, _spawn.rotation) as GameObject;
+    //    Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
+    //    instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
+    //}
+
+    public void ShootBullet()
     {
-        yield return new WaitForSeconds(0.4f);
         GameObject instBullet = Instantiate(_bullet, _spawn.position, _spawn.rotation) as GameObject;
         Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
         instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
+        
     }
 
 }
