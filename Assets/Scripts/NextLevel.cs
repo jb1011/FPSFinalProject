@@ -42,15 +42,6 @@ public class NextLevel : MonoBehaviour
         _needYourGun.enabled = false;
     }
 
-    // just in case character go through a wall
-    private void Update()
-    {
-        if(_player.position.y <= -20f)
-        {
-            SceneManager.LoadScene("Scene01");
-        }
-    }
-
 }
 
 
