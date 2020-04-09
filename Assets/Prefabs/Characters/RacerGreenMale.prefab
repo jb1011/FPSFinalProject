@@ -1399,7 +1399,6 @@ GameObject:
   - component: {fileID: 3137100140580454948}
   - component: {fileID: 1054601131459161588}
   - component: {fileID: 65785684}
-  - component: {fileID: 1122513894}
   m_Layer: 10
   m_Name: RacerGreenMale
   m_TagString: Untagged
@@ -1493,25 +1492,6 @@ NavMeshAgent:
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &65785684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523720761010331365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9c038ff10870b4dbaf0439d278206c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _explosion: {fileID: 1472249876681669030, guid: 970b1ba5e36d46f4c833cbe08a8ab5dc,
-    type: 3}
-  _source: {fileID: 0}
-  _score: {fileID: 11400000, guid: cf62b7ff74913a74f84d3cbc97476d5a, type: 2}
-  _enemyHealth: 100
-  _bar: {fileID: 8824210157755544273}
-  _KillScore: {fileID: 11400000, guid: 97d6d5c9f94e1cd45920f2d136ab4ea1, type: 2}
---- !u!114 &1122513894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
