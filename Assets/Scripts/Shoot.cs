@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Shoot : MonoBehaviour
 {
@@ -36,8 +37,18 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     LayerMask _allLayers;
 
+    [SerializeField]
+    LayerMask _parentLayer;
+
+    [SerializeField]
+    private TextMeshProUGUI _textParent;
+
     private int damage = 10;
 
+    private void Start()
+    {
+        _textParent.enabled = false;
+    }
     private void Update()
     {
         RaycastHit hitInfo;
@@ -59,6 +70,13 @@ public class Shoot : MonoBehaviour
         {
             _nextTimeToFire = Time.time + 1f / _fireRate;
             ShootRocket();
+
+            RaycastHit _hit;
+            if (Physics.Raycast(_gunPoint.position, _camera.transform.forward, out _hit, range, _parentLayer, QueryTriggerInteraction.Ignore))
+            {
+                StartCoroutine(ShowMessage());
+                
+            }
         }
     }
     
@@ -81,5 +99,13 @@ public class Shoot : MonoBehaviour
         {
             Instantiate(m_impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
+
+    }
+
+    IEnumerator ShowMessage()
+    {
+        _textParent.enabled = true;
+        yield return new WaitForSeconds(2f);
+        _textParent.enabled = false;
     }
 }

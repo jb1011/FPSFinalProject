@@ -518,6 +518,7 @@ MonoBehaviour:
   _score: {fileID: 11400000, guid: cf62b7ff74913a74f84d3cbc97476d5a, type: 2}
   _enemyHealth: 100
   _bar: {fileID: 814698639}
+  _KillScore: {fileID: 11400000, guid: 97d6d5c9f94e1cd45920f2d136ab4ea1, type: 2}
 --- !u!195 &122504831
 NavMeshAgent:
   m_ObjectHideFlags: 0
