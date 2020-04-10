@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Car
   - Bullet
+  - FxTemporaire
+  - Ground
   layers:
   - Default
   - TransparentFX
