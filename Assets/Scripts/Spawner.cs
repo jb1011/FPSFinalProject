@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Spawner : MonoBehaviour
 {
@@ -10,10 +11,18 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private BoolVariable _spawned;
 
+    [SerializeField]
+    private GameObject _lava;
+
+    [SerializeField]
+    private TextMeshProUGUI _deathMessage;
+
     private void Start()
     {
         _spawned.Value = false;
-        foreach(GameObject _car in _cars)
+        _lava.SetActive(false);
+        _deathMessage.enabled = false;
+        foreach (GameObject _car in _cars)
         {
             _car.SetActive(false);
         }
@@ -28,6 +37,7 @@ public class Spawner : MonoBehaviour
             {
                 _car.SetActive(true);
             }
+            _lava.SetActive(true);
         }
     }
 }
