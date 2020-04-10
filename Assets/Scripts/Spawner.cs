@@ -7,10 +7,12 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject[] _cars;
 
-    private bool _spawned = false;
+    [SerializeField]
+    private BoolVariable _spawned;
 
     private void Start()
     {
+        _spawned.Value = false;
         foreach(GameObject _car in _cars)
         {
             _car.SetActive(false);
@@ -18,9 +20,9 @@ public class Spawner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player") && !_spawned)
+        if (other.transform.CompareTag("Player") && !_spawned.Value)
         {
-            _spawned = true;
+            _spawned.Value = true;
 
             foreach (GameObject _car in _cars)
             {
