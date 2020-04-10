@@ -27,7 +27,7 @@ public class levelManagerlevel2 : MonoBehaviour
         //if player go through walls
         if(_player.position.y <= -25f)
         {
-            SceneManager.LoadScene("Scene02");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         //if player wants to pause the game

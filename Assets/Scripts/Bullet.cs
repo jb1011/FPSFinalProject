@@ -18,4 +18,21 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Car"))
+        {
+            gameObject.SetActive(false);
+        }
+
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.transform.CompareTag("Car"))
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 }
