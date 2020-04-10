@@ -14,6 +14,9 @@ public class levelManagerlevel2 : MonoBehaviour
     [SerializeField]
     private BoolVariable _isInCar;
 
+    [SerializeField]
+    private Animator UIController;
+
     public bool GameIsPaused;
 
     public GameObject PauseMenuUI;
@@ -46,9 +49,10 @@ public class levelManagerlevel2 : MonoBehaviour
         }
 
         //if player dies
-        if(_playerHealth.Value <= 0)
+        if(_playerHealth.Value < 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(DeathPlayer());
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
@@ -76,5 +80,12 @@ public class levelManagerlevel2 : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator DeathPlayer()
+    {
+        UIController.SetTrigger("Death");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
