@@ -34620,6 +34620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 75416814}
   _playerHealth: {fileID: 11400000, guid: 1fa54d57360f8444ab16f4110d73c870, type: 2}
+  _isInCar: {fileID: 11400000, guid: 5e21df97069c5424bb03e0849df4d1e2, type: 2}
   GameIsPaused: 0
   PauseMenuUI: {fileID: 131803449}
 --- !u!4 &1842032404

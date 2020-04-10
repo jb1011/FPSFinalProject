@@ -11,6 +11,9 @@ public class levelManagerlevel2 : MonoBehaviour
     [SerializeField]
     private IntVariable _playerHealth;
 
+    [SerializeField]
+    private BoolVariable _isInCar;
+
     public bool GameIsPaused;
 
     public GameObject PauseMenuUI;
@@ -18,6 +21,7 @@ public class levelManagerlevel2 : MonoBehaviour
 
     private void Start()
     {
+        _isInCar.Value = false;
         GameIsPaused = false;
         PauseMenuUI.SetActive(false);
     }
