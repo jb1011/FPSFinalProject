@@ -1772,7 +1772,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _explosion
       value: 
-      objectReference: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567,
+      objectReference: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f,
         type: 3}
     - target: {fileID: 9092901776618872226, guid: b4034bbf81ac9964d9a4c20f462b3da9,
         type: 3}
@@ -15598,6 +15598,16 @@ PrefabInstance:
       propertyPath: _textParent
       value: 
       objectReference: {fileID: 972743185}
+    - target: {fileID: 5944541619535767951, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: _allLayers.m_Bits
+      value: 2871
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944541619535767951, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: m_bloodEffect
+      value: 
+      objectReference: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
     - target: {fileID: 5944541619685011459, guid: 57a62a887c8c844459bb6e6c29d4b23a,
         type: 3}
       propertyPath: m_Name
@@ -27338,7 +27348,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _explosion
       value: 
-      objectReference: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567,
+      objectReference: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f,
         type: 3}
     - target: {fileID: 9092901776618872226, guid: b4034bbf81ac9964d9a4c20f462b3da9,
         type: 3}

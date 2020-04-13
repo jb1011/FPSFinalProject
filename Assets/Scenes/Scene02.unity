@@ -21166,6 +21166,16 @@ PrefabInstance:
       propertyPath: _textParent
       value: 
       objectReference: {fileID: 972743185}
+    - target: {fileID: 5944541619535767951, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: _allLayers.m_Bits
+      value: 2871
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944541619535767951, guid: 57a62a887c8c844459bb6e6c29d4b23a,
+        type: 3}
+      propertyPath: m_bloodEffect
+      value: 
+      objectReference: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
     - target: {fileID: 5944541619685011459, guid: 57a62a887c8c844459bb6e6c29d4b23a,
         type: 3}
       propertyPath: m_Name

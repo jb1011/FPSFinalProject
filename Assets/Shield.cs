@@ -8,6 +8,9 @@ public class Shield : MonoBehaviour
     private IntVariable _healthPlayer;
 
     [SerializeField]
+    private IntVariable _maxHealthPlayer;
+
+    [SerializeField]
     private AudioSource _item;
 
     private void Awake()
@@ -17,7 +20,7 @@ public class Shield : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("Player") && _healthPlayer.Value < 200)
+        if (other.CompareTag("Player") && _healthPlayer.Value < _maxHealthPlayer.Value)
         {
             
             _healthPlayer.Value += 10;

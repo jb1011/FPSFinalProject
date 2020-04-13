@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
 
     public GameObject m_impactEffect;
 
+    public GameObject m_bloodEffect;
+
     [SerializeField]
     private Image _aimImage;
 
@@ -92,6 +94,7 @@ public class Shoot : MonoBehaviour
             if(_enemy != null)
             {
                 _enemy.Damage(damage);
+                Instantiate(m_bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
             }    
         }
 
