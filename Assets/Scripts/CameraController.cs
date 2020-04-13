@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
         float x = Input.GetAxis("Mouse X");
 
         _camRotation -= y * _lookSpeed * Time.deltaTime;
-        _camRotation = Mathf.Clamp(_camRotation, -25f, 20f);
+        _camRotation = Mathf.Clamp(_camRotation, -30f, 40f);
 
         transform.localRotation = Quaternion.Euler(_camRotation, 0, 0);
 

@@ -36,7 +36,7 @@ public class EnemyLevel2 : MonoBehaviour
     {
         _isdead = false;
         _hp = _enemyHealth;
-        _KillScore.Value = 0;
+        
     }
     private void OnCollisionEnter(Collision collision)
     {

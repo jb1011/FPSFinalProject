@@ -32,6 +32,7 @@ public class Spawner : MonoBehaviour
         if (other.transform.CompareTag("Player") && !_spawned.Value)
         {
             _spawned.Value = true;
+            
 
             foreach (GameObject _car in _cars)
             {

@@ -8683,6 +8683,7 @@ MonoBehaviour:
   _spawned: {fileID: 11400000, guid: a462c518c542bec40a46cb21d2e2027f, type: 2}
   _lava: {fileID: 769484225}
   _deathMessage: {fileID: 2004307234}
+  _killCount: {fileID: 11400000, guid: 97d6d5c9f94e1cd45920f2d136ab4ea1, type: 2}
 --- !u!65 &905012120
 BoxCollider:
   m_ObjectHideFlags: 0

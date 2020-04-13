@@ -38,6 +38,7 @@ public class Level3Manager : MonoBehaviour
         _boss.SetActive(false);
         _moreCars.SetActive(false);
         _jump.enabled = false;
+        _killCount.Value = 0;
 
     }
 
