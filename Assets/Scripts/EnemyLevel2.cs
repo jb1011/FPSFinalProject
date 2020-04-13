@@ -26,6 +26,12 @@ public class EnemyLevel2 : MonoBehaviour
     [SerializeField]
     private IntVariable _KillScore;
 
+    [SerializeField]
+    private GameObject _shield;
+
+    [SerializeField]
+    private Transform _spawnShield;
+
     private void Start()
     {
         _isdead = false;
@@ -56,6 +62,12 @@ public class EnemyLevel2 : MonoBehaviour
             _isdead = true;
             _source.Play();
             Instantiate(_explosion, transform.position, transform.rotation);
+            int inst = Random.Range(1, 4);
+            if(inst == 1)
+            {
+                Instantiate(_shield, _spawnShield.position, Quaternion.identity);
+            }
+            
             Destroy(gameObject);
         }
     }
