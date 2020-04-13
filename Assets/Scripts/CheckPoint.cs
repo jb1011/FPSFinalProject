@@ -18,6 +18,12 @@ public class CheckPoint : MonoBehaviour
     [SerializeField]
     private Animator UIController;
 
+
+    [SerializeField]
+    private IntVariable _maxHealth;
+
+    [SerializeField]
+    private IntVariable _currentHealth;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
@@ -26,13 +32,6 @@ public class CheckPoint : MonoBehaviour
             StartCoroutine(ReSpawn());
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.transform.CompareTag("Player"))
-    //    {
-    //        StartCoroutine(ReSpawn());
-    //    }
-    //}
 
     IEnumerator ReSpawn()
     {
@@ -40,6 +39,7 @@ public class CheckPoint : MonoBehaviour
         _deathMessage.enabled = true;
         
         yield return new WaitForSeconds(2f);
+        _currentHealth.Value = (_maxHealth.Value / 2);
         _deathMessage.enabled = false;
         _player.transform.position = _checkPoint.position;
         _player.transform.rotation = _checkPoint.rotation;

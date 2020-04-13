@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPlayer: {fileID: 11400000, guid: 1fa54d57360f8444ab16f4110d73c870, type: 2}
+  _maxHealthPlayer: {fileID: 11400000, guid: 3683a145f1060cf4e868a2133d56fcfc, type: 2}
   _item: {fileID: 0}
 --- !u!82 &7486503630841544656
 AudioSource:
