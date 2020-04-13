@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621712695387e66438aff30878495c2a, type: 3}
   m_Name: KillScore
   m_EditorClassIdentifier: 
-  Value: 30
+  Value: 22
