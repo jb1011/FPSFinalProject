@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
     private float _timer = 3f;
 
     // Update is called once per frame
