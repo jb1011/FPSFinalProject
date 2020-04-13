@@ -2009,13 +2009,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9c038ff10870b4dbaf0439d278206c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosion: {fileID: 1472249876681669030, guid: 970b1ba5e36d46f4c833cbe08a8ab5dc,
-    type: 3}
+  _explosion: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
   _source: {fileID: 0}
   _score: {fileID: 11400000, guid: cf62b7ff74913a74f84d3cbc97476d5a, type: 2}
   _enemyHealth: 500
   _bar: {fileID: 9092901775292972263}
   _KillScore: {fileID: 11400000, guid: 97d6d5c9f94e1cd45920f2d136ab4ea1, type: 2}
+  _shield: {fileID: 0}
+  _spawnShield: {fileID: 0}
 --- !u!195 &9092901776035228183
 NavMeshAgent:
   m_ObjectHideFlags: 0
