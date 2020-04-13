@@ -34,11 +34,11 @@ public class EnemyLevel2 : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Car") && !_isdead)
+        if (collision.transform.CompareTag("MyCar") && !_isdead)
         {
             _isdead = true;
             _source.Play();
-            _score.Value += 50;
+            _score.Value += 25;
             Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             _KillScore.Value++;
@@ -52,7 +52,7 @@ public class EnemyLevel2 : MonoBehaviour
         if(_hp <= 0)
         {
             _KillScore.Value++;
-            _score.Value += 50;
+            _score.Value += 25;
             _isdead = true;
             _source.Play();
             Instantiate(_explosion, transform.position, transform.rotation);

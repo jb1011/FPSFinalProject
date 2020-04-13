@@ -1323,7 +1323,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _rotationSpeed: 1
   _playerInSight: 0
-  _bullet: {fileID: 7091527435991048820, guid: 7754382473aded54781358a2dd66ccc4, type: 3}
+  _bullet: {fileID: 7091527435991048820, guid: cfa10046d6d93564c950d5e6c5d8ef41, type: 3}
   _bulletSpeed: 50
   _spawn: {fileID: 5506149930602660451}
   _gunSound: {fileID: 0}
@@ -1751,7 +1751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5506149930602660450}
   m_LocalRotation: {x: -0.00000018186525, y: -0.51828927, z: -0.000000102421446, w: 0.8552054}
-  m_LocalPosition: {x: 0.23, y: 1.16, z: 1.86}
+  m_LocalPosition: {x: 1.01, y: 2, z: 1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9218397492654789748}

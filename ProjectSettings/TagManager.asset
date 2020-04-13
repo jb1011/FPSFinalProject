@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - FxTemporaire
   - Ground
+  - MyCar
   layers:
   - Default
   - TransparentFX

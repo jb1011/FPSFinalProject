@@ -33,6 +33,9 @@ public class EnemyRunShoot : MonoBehaviour
     private float _timer = 2f;
 
     private float _secondTimer = 1f;
+
+    private bool _hasShot = false;
+
     private void Start()
     {
         _anim = GetComponent<Animator>();
@@ -68,12 +71,18 @@ public class EnemyRunShoot : MonoBehaviour
                 _navMeshAgent.isStopped = true;
                 _anim.SetBool("IsRunning", false);   
                 _anim.SetBool("IsShooting", true);
-                _gunSound.Play();
+                
                 _secondTimer -= Time.deltaTime;
+
+                if (!_hasShot) 
+                {
+                    ShootBullet();
+                    _hasShot = true;
+                }
                 
                 if (_secondTimer <= 0)
                 {
-                    ShootBullet();
+                    _hasShot = false;
                     _timer = 1f;
                 }
             }
@@ -105,6 +114,7 @@ public class EnemyRunShoot : MonoBehaviour
 
     public void ShootBullet()
     {
+        _gunSound.Play();
         GameObject instBullet = Instantiate(_bullet, _spawn.position, _spawn.rotation) as GameObject;
         Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
         instBulletRigidbody.velocity = transform.rotation * Vector3.forward * _bulletSpeed;
