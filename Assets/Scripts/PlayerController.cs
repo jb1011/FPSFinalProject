@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator _UIController;
 
+    private Vector3 inputVector;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         if (!IsInCar.Value)
         {
             _inputs = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
