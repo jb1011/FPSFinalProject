@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Level3Manager : MonoBehaviour
@@ -39,6 +40,8 @@ public class Level3Manager : MonoBehaviour
     private float timer = 6f;
 
     private float _secondTimer = 8f;
+
+    private float _thirdTimer = 4f;
 
     [SerializeField]
     private GameObject _runeEffect;
@@ -99,9 +102,14 @@ public class Level3Manager : MonoBehaviour
             }           
         }
 
-        if(_killCount.Value == 23)
+        if(_killCount.Value == 23 && _thirdTimer > 0)
         {
             _congrats.enabled = true;
+            _thirdTimer -= Time.deltaTime;
+        }
+        else
+        {
+            SceneManager.LoadScene("Scene04");
         }
 
 
