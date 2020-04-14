@@ -27,7 +27,7 @@ public class levelManagerlevel2 : MonoBehaviour
         _isInCar.Value = false;
         GameIsPaused = false;
         PauseMenuUI.SetActive(false);
-        _playerHealth.Value = 200;
+        _playerHealth.Value = 150;
 
     }
 
