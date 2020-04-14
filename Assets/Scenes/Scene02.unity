@@ -37703,6 +37703,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 5403212705343939628, guid: c108f5b36e8b23e43885a72728613e99,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5403212705343939629, guid: c108f5b36e8b23e43885a72728613e99,
         type: 3}
       propertyPath: _player
