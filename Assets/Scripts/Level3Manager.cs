@@ -28,6 +28,9 @@ public class Level3Manager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _cantGo;
 
+    [SerializeField]
+    private TextMeshProUGUI _congrats;
+
     private float timer = 6f;
 
     private float _secondTimer = 8f; 
@@ -39,6 +42,7 @@ public class Level3Manager : MonoBehaviour
         _moreCars.SetActive(false);
         _jump.enabled = false;
         _killCount.Value = 0;
+        _congrats.enabled = false;
 
     }
 
@@ -78,6 +82,11 @@ public class Level3Manager : MonoBehaviour
                     _jump.enabled = false;
                 }
             }           
+        }
+
+        if(_killCount.Value == 23)
+        {
+            _congrats.enabled = true;
         }
 
 
