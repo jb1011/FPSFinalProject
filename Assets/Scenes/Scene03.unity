@@ -1319,6 +1319,8 @@ GameObject:
   m_Component:
   - component: {fileID: 66008828}
   - component: {fileID: 66008829}
+  - component: {fileID: 66008831}
+  - component: {fileID: 66008830}
   m_Layer: 0
   m_Name: BonFire
   m_TagString: Untagged
@@ -1364,6 +1366,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.679199, y: 3.702898, z: 5.970978}
   m_Center: {x: 3.5329132, y: -1.351449, z: 1.2101593}
+--- !u!65 &66008830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66008827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.958115, y: 8.658836, z: 8.366608}
+  m_Center: {x: 3.9790573, y: -1.3556633, z: 1.2315521}
+--- !u!114 &66008831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66008827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7915053d636e5349980d900afa30e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerHealth: {fileID: 11400000, guid: 1fa54d57360f8444ab16f4110d73c870, type: 2}
+  _hurtSound: {fileID: 820999338}
+  _UIController: {fileID: 424912994}
 --- !u!1001 &78158095
 PrefabInstance:
   m_ObjectHideFlags: 0

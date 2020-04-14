@@ -4584,6 +4584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 11400000, guid: 1fa54d57360f8444ab16f4110d73c870, type: 2}
+  _hurtSound: {fileID: 1396473752}
+  _UIController: {fileID: 424912994}
 --- !u!1001 &1024298404
 PrefabInstance:
   m_ObjectHideFlags: 0
