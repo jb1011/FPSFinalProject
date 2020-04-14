@@ -17,6 +17,11 @@ public class Level3Manager : MonoBehaviour
     [SerializeField]
     private AudioSource _levelUp;
 
+    [SerializeField]
+    private AudioSource _growl;
+
+    private bool _growlPlayed = false;
+
     private bool _hasPlayed;
 
     [SerializeField]
@@ -33,7 +38,13 @@ public class Level3Manager : MonoBehaviour
 
     private float timer = 6f;
 
-    private float _secondTimer = 8f; 
+    private float _secondTimer = 8f;
+
+    [SerializeField]
+    private GameObject _runeEffect;
+
+    [SerializeField]
+    private Transform _spawnerRune;
     private void Start()
     {
         _hasPlayed = false;
@@ -57,15 +68,19 @@ public class Level3Manager : MonoBehaviour
             _cantGo.enabled = false;
         }
 
-        if(_killCount.Value == 20)
+        if(_killCount.Value == 20 && !_growlPlayed)
         {
-
+            Instantiate(_runeEffect, _spawnerRune);
             _boss.SetActive(true);
+            _growl.Play();
+            _growlPlayed = true;
         }
 
         if(_killCount.Value >= 22)
         {
             _moreCars.SetActive(true);
+            
+            
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
