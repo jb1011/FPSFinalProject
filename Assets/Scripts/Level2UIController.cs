@@ -14,10 +14,19 @@ public class Level2UIController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _radio;
 
+    [SerializeField]
+    private IntVariable _killCount;
+
+    [SerializeField]
+    private TextMeshProUGUI _waterfall;
+
     private float timer = 5f;
+
+    private float _otherTimer = 5f;
     // Start is called before the first frame update
     void Start()
     {
+        _killCount.Value = 0;
         _getInCar.enabled = true;
         _radio.enabled = false;
     }
@@ -42,6 +51,20 @@ public class Level2UIController : MonoBehaviour
         else
         {
             _radio.enabled = false;
+        }
+
+        if(_killCount.Value == 15)
+        {
+            if(_otherTimer > 0)
+            {
+                _waterfall.enabled = true;
+                _otherTimer -= Time.deltaTime;
+            }
+            else
+            {
+                _waterfall.enabled = false;
+
+            }
         }
     }
 }
