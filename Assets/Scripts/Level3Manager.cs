@@ -48,6 +48,11 @@ public class Level3Manager : MonoBehaviour
 
     [SerializeField]
     private Transform _spawnerRune;
+
+    private void Awake()
+    {
+        _killCount.Value = 0;
+    }
     private void Start()
     {
         _hasPlayed = false;
@@ -55,7 +60,7 @@ public class Level3Manager : MonoBehaviour
         _boss.SetActive(false);
         _moreCars.SetActive(false);
         _jump.enabled = false;
-        _killCount.Value = 0;
+        
         _congrats.enabled = false;
 
     }
@@ -107,7 +112,7 @@ public class Level3Manager : MonoBehaviour
             _congrats.enabled = true;
             _thirdTimer -= Time.deltaTime;
         }
-        else
+        if(_thirdTimer <= 0)
         {
             SceneManager.LoadScene("Scene04");
         }
