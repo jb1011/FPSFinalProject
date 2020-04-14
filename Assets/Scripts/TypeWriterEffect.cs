@@ -26,6 +26,9 @@ public class TypeWriterEffect : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _whereToWrite3;
 
+    [SerializeField]
+    private AudioSource _typing;
+
     private bool _text1;
 
     private string currentText = "";
@@ -42,6 +45,7 @@ public class TypeWriterEffect : MonoBehaviour
         yield return new WaitForSeconds(5f);
         for(int i = 0; i < fullText1.Length; i++)
         {
+            _typing.Play();
             currentText = fullText1.Substring(0, i);
             _whereToWrite1.text = currentText;
             yield return new WaitForSeconds(delay);
@@ -49,6 +53,7 @@ public class TypeWriterEffect : MonoBehaviour
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < fullText2.Length; i++)
         {
+            _typing.Play();
             currentText = fullText2.Substring(0, i);
             _whereToWrite2.text = currentText;
             yield return new WaitForSeconds(delay);
@@ -56,6 +61,7 @@ public class TypeWriterEffect : MonoBehaviour
         //yield return new WaitForSeconds(3f);
         for (int i = 0; i < fullText3.Length; i++)
         {
+            _typing.Play();
             currentText = fullText3.Substring(0, i);
             _whereToWrite3.text = currentText;
             yield return new WaitForSeconds(delay);
