@@ -69,7 +69,7 @@ public class levelManagerlevel2 : MonoBehaviour
         AudioListener.pause = true;
     }
 
-    void Resume()
+    public void Resume()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
