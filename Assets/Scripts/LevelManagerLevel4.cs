@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManagerLevel4 : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class LevelManagerLevel4 : MonoBehaviour
 
     private float _timer;
     private float _secondTimer;
+    private float _thirdTimer;
     void Start()
     {
         _killScore.Value = 0;
@@ -33,6 +35,7 @@ public class LevelManagerLevel4 : MonoBehaviour
         _spawnEffectThirdWave.SetActive(false);
         _timer = 3f;
         _secondTimer = 3f;
+        _thirdTimer = 5f;
         _congrats.SetActive(false);
     }
 
@@ -57,9 +60,14 @@ public class LevelManagerLevel4 : MonoBehaviour
         {
             _thirdWave.SetActive(true);
         }
-        if(_killScore.Value == 6)
+        if(_killScore.Value == 6 && _thirdTimer > 0)
         {
             _congrats.SetActive(true);
+            _thirdTimer -= Time.deltaTime;
+        }
+        if(_thirdTimer <= 0)
+        {
+            SceneManager.LoadScene("Scene05");
         }
     }
 }

@@ -49,9 +49,13 @@ public class Level3Manager : MonoBehaviour
     [SerializeField]
     private Transform _spawnerRune;
 
+    [SerializeField]
+    private Animator _UIController;
+
     private void Awake()
     {
         _killCount.Value = 0;
+        _UIController.SetTrigger("Start");
     }
     private void Start()
     {
@@ -62,13 +66,14 @@ public class Level3Manager : MonoBehaviour
         _jump.enabled = false;
         
         _congrats.enabled = false;
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_killCount.Value == 12 && !_hasPlayed)
+        if(_killCount.Value == 22 && !_hasPlayed)
         {
             _levelUp.Play();
             _collider.SetActive(false);
@@ -76,7 +81,7 @@ public class Level3Manager : MonoBehaviour
             _cantGo.enabled = false;
         }
 
-        if(_killCount.Value == 20 && !_growlPlayed)
+        if(_killCount.Value == 30 && !_growlPlayed)
         {
             Instantiate(_runeEffect, _spawnerRune);
             _boss.SetActive(true);
@@ -84,7 +89,7 @@ public class Level3Manager : MonoBehaviour
             _growlPlayed = true;
         }
 
-        if(_killCount.Value >= 22)
+        if(_killCount.Value >= 32)
         {
             _moreCars.SetActive(true);
             
@@ -107,7 +112,7 @@ public class Level3Manager : MonoBehaviour
             }           
         }
 
-        if(_killCount.Value == 23 && _thirdTimer > 0)
+        if(_killCount.Value == 33 && _thirdTimer > 0)
         {
             _congrats.enabled = true;
             _thirdTimer -= Time.deltaTime;

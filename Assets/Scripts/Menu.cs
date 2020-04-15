@@ -18,6 +18,8 @@ public class Menu : MonoBehaviour
     {
         _mainCanvas.SetActive(true);
         _secondCanvas.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void Play()
     {
