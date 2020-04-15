@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerController : MonoBehaviour
 {
@@ -102,6 +103,7 @@ public class PlayerController : MonoBehaviour
             _UIController.SetTrigger("PlayerHurt");
             _getsHitSound.Play();
             _playerHealth.Value -= _bulletDamage;
+            CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
         }
 
     }
