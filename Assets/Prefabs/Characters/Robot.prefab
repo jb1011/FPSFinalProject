@@ -1145,7 +1145,7 @@ MonoBehaviour:
   _explosion: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
   _source: {fileID: 0}
   _score: {fileID: 11400000, guid: cf62b7ff74913a74f84d3cbc97476d5a, type: 2}
-  _enemyHealth: 200
+  _enemyHealth: 50
   _bar: {fileID: 785290180141248749}
   _KillScore: {fileID: 11400000, guid: 97d6d5c9f94e1cd45920f2d136ab4ea1, type: 2}
   _shield: {fileID: 8521505082471611223, guid: f3ed43146713d684fa81638ffb715fe9, type: 3}
