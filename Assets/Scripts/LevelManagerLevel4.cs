@@ -9,17 +9,27 @@ public class LevelManagerLevel4 : MonoBehaviour
 
     [SerializeField]
     private GameObject _miniBoss;
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private GameObject _spawnEffectMiniBoss;
+
+    private float _timer;
     void Start()
     {
         _killScore.Value = 0;
         _miniBoss.SetActive(false);
+        _spawnEffectMiniBoss.SetActive(false);
+        _timer = 3f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(_killScore.Value == 1)
+        if(_killScore.Value == 1 && _timer > 0)
+        {
+            _spawnEffectMiniBoss.SetActive(true);
+            _timer -= Time.deltaTime;
+        }
+        if(_timer <= 0)
         {
             _miniBoss.SetActive(true);
         }
