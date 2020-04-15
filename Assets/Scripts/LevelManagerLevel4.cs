@@ -19,6 +19,9 @@ public class LevelManagerLevel4 : MonoBehaviour
     [SerializeField]
     private GameObject _spawnEffectThirdWave;
 
+    [SerializeField]
+    private GameObject _congrats;
+
     private float _timer;
     private float _secondTimer;
     void Start()
@@ -30,6 +33,7 @@ public class LevelManagerLevel4 : MonoBehaviour
         _spawnEffectThirdWave.SetActive(false);
         _timer = 3f;
         _secondTimer = 3f;
+        _congrats.SetActive(false);
     }
 
     void Update()
@@ -52,6 +56,10 @@ public class LevelManagerLevel4 : MonoBehaviour
         if(_secondTimer <= 0)
         {
             _thirdWave.SetActive(true);
+        }
+        if(_killScore.Value == 6)
+        {
+            _congrats.SetActive(true);
         }
     }
 }
