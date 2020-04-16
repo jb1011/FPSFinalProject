@@ -50,15 +50,11 @@ public class Level3Manager : MonoBehaviour
     private Transform _spawnerRune;
 
     [SerializeField]
-    private Animator _UIController;
-
-    [SerializeField]
     private TextMeshProUGUI _canGoUpStairs;
 
     private void Awake()
     {
         _killCount.Value = 0;
-        _UIController.SetTrigger("Start");
     }
     private void Start()
     {
@@ -126,7 +122,5 @@ public class Level3Manager : MonoBehaviour
         {
             SceneManager.LoadScene("Scene04");
         }
-
-
     }
 }

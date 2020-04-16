@@ -415,6 +415,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526257706}
     m_Modifications:
+    - target: {fileID: 308352089923729418, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1858180842447968498, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
       propertyPath: _source
@@ -2170,6 +2175,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145480556}
     m_Modifications:
+    - target: {fileID: 1403095716864075873, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1403095716949224440, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}
       propertyPath: _target
@@ -5916,6 +5926,90 @@ Transform:
   m_Father: {fileID: 1983368222}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1131299973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1781930563638536, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_Name
+      value: CFX2_Wandering_Spirits
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -141.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -262.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005808538926482, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198163637374424290, guid: daa6cceb1b087d74aad6916dac2805ea,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198163637374424290, guid: daa6cceb1b087d74aad6916dac2805ea,
+        type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198163637374424290, guid: daa6cceb1b087d74aad6916dac2805ea,
+        type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: daa6cceb1b087d74aad6916dac2805ea, type: 3}
 --- !u!1001 &1140567520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13591,6 +13685,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526257706}
     m_Modifications:
+    - target: {fileID: 308352089923729418, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1858180842447968498, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
       propertyPath: _source
@@ -16987,6 +17086,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145480556}
     m_Modifications:
+    - target: {fileID: 1403095716864075873, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1403095716949224440, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}
       propertyPath: _target
@@ -17081,6 +17185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526257706}
     m_Modifications:
+    - target: {fileID: 308352089923729418, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1858180842447968498, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
       propertyPath: _source
@@ -17195,6 +17304,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983368222}
     m_Modifications:
+    - target: {fileID: 1403095716864075873, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: _UIAnim
+      value: 
+      objectReference: {fileID: 424912994}
     - target: {fileID: 1403095716949224440, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}
       propertyPath: _target

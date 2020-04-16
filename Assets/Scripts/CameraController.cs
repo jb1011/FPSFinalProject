@@ -14,15 +14,14 @@ public class CameraController : MonoBehaviour
     private float _camRotation;
 
     [SerializeField]
-    private BoolVariable IsInCar;
-    // Start is called before the first frame update
+    private GameObject _runEffect;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         float y = Input.GetAxis("Mouse Y");
@@ -34,5 +33,10 @@ public class CameraController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(_camRotation, 0, 0);
 
         _characterRb.rotation = Quaternion.Euler(_characterRb.rotation.eulerAngles + x * _lookSpeed * Time.deltaTime * Vector3.up);
+
+        if(x > 0.3 || y > 0.3 || x < -0.3 || y < -0.3)
+        {
+            _runEffect.SetActive(false);
+        }
     }
 }

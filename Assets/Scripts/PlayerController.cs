@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator _UIController;
 
+    [SerializeField]
+    private GameObject _runEffect;
+
     private Vector3 inputVector;
 
     void Start()
@@ -65,10 +68,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 _currentSpeed = _sprint;
+                
             }
             else
             {
                 _currentSpeed = _originalSpeed;
+                _runEffect.SetActive(false);
+            }
+
+            if(Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0)
+            {
+                _runEffect.SetActive(true);
             }
 
             if (Input.GetKey(KeyCode.Space) && _isGrounded)
