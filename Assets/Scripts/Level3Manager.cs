@@ -52,6 +52,9 @@ public class Level3Manager : MonoBehaviour
     [SerializeField]
     private Animator _UIController;
 
+    [SerializeField]
+    private TextMeshProUGUI _canGoUpStairs;
+
     private void Awake()
     {
         _killCount.Value = 0;
@@ -66,7 +69,8 @@ public class Level3Manager : MonoBehaviour
         _jump.enabled = false;
         
         _congrats.enabled = false;
-        
+
+        _canGoUpStairs.enabled = false;
 
     }
 
@@ -79,6 +83,7 @@ public class Level3Manager : MonoBehaviour
             _collider.SetActive(false);
             _hasPlayed = true;
             _cantGo.enabled = false;
+            _canGoUpStairs.enabled = true;
         }
 
         if(_killCount.Value == 30 && !_growlPlayed)
