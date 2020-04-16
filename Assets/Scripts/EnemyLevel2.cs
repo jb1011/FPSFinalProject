@@ -62,7 +62,7 @@ public class EnemyLevel2 : MonoBehaviour
             _isdead = true;
             _source.Play();
             Instantiate(_explosion, transform.position, transform.rotation);
-            int inst = Random.Range(1, 4);
+            int inst = Random.Range(1, 5);
             if(inst == 1)
             {
                 Instantiate(_shield, _spawnShield.position, Quaternion.identity);
