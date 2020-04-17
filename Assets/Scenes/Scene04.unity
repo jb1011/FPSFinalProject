@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: _enemyHealth
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 1858180842510772447, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1858180842533934910, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2249,6 +2254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MegaBoss (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874743938248447169, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874743938267228960, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}
@@ -13700,6 +13710,11 @@ PrefabInstance:
       propertyPath: _enemyHealth
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 1858180842510772447, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1858180842533934910, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -17161,6 +17176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MegaBoss (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7874743938248447169, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7874743938267228960, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -17199,6 +17219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyHealth
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858180842510772447, guid: 976d41f279e076d4e998190b55b51e14,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1858180842533934910, guid: 976d41f279e076d4e998190b55b51e14,
         type: 3}
@@ -17373,6 +17398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MegaBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874743938248447169, guid: 13f086cd9624ab64da817cba6ad6cc45,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874743938267228960, guid: 13f086cd9624ab64da817cba6ad6cc45,
         type: 3}

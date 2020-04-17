@@ -38,7 +38,7 @@ public class CheckPoint : MonoBehaviour
         UIController.SetTrigger("Death");
         _deathMessage.enabled = true;
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         _currentHealth.Value = (_maxHealth.Value / 2);
         _deathMessage.enabled = false;
         _player.transform.position = _checkPoint.position;

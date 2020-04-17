@@ -20256,7 +20256,6 @@ MonoBehaviour:
   _congrats: {fileID: 1488502448}
   _runeEffect: {fileID: 100000, guid: ada5d62ffe762ce4fbccc70dcdbc9022, type: 3}
   _spawnerRune: {fileID: 317400332}
-  _UIController: {fileID: 424912994}
   _canGoUpStairs: {fileID: 1971911297}
 --- !u!82 &1582545604
 AudioSource:

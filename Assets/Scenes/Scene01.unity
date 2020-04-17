@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 41173674666cad64bb8ec62deadbd3ca,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -14868,8 +14869,8 @@ Transform:
   m_Children:
   - {fileID: 1466890724}
   - {fileID: 609242588}
-  - {fileID: 354525072}
   - {fileID: 1387628568}
+  - {fileID: 354525072}
   - {fileID: 30877915}
   - {fileID: 1356146364}
   m_Father: {fileID: 115550410}
