@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsInCar.Value)
         {
-            _inputs = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            _inputs = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
             
 
             if (Input.GetKey(KeyCode.LeftShift))
