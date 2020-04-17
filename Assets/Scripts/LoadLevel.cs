@@ -40,7 +40,7 @@ public class LoadLevel : MonoBehaviour
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            Debug.Log(progress);
+            Debug.Log(operation.progress);
             _slider.value = progress;
 
             yield return null;

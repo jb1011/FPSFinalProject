@@ -39681,7 +39681,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1877228175}
   - component: {fileID: 1877228176}
-  - component: {fileID: 1877228177}
   - component: {fileID: 1877228178}
   m_Layer: 0
   m_Name: NextLevel
@@ -39717,18 +39716,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.609175, y: 1.5331744, z: 1.8197632}
   m_Center: {x: 5.1359863, y: 0.26658693, z: 0.86011964}
---- !u!114 &1877228177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877228174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725c1278d5b7b9c4abe4a9b401456eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1877228178
 MonoBehaviour:
   m_ObjectHideFlags: 0

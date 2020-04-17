@@ -88,6 +88,11 @@ public class PlayerController : MonoBehaviour
                 _isGrounded = false;
             }
         }
+
+        if (IsInCar.Value)
+        {
+            _runEffect.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
